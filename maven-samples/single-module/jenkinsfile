@@ -5,6 +5,7 @@ pipeline {
         stage('Build Stage') {
             steps {
                 echo 'We are building now..'
+				dir('maven-samples/single-module')
                 sh 'mvn clean install'
             }
         }
@@ -12,6 +13,7 @@ pipeline {
         stage('Testing Stage') {
             steps {
                 echo 'Testing...'
+				dir('maven-samples/single-module')
                 sh 'mvn test' 
             }
         }
