@@ -1,0 +1,19 @@
+pipeline {
+
+aganet any 
+
+stages {
+	stage('build stage ') {
+		echo 'we are building now ..' 
+		sh 'mvn clean install'
+
+}
+
+	stage('Tesing stage')
+{
+	echo 'testing ... '
+	sh 'mvn test' 
+}
+} 
+
+}
