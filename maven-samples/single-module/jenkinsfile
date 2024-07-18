@@ -1,19 +1,19 @@
 pipeline {
+    agent any 
 
-aganet any 
+    stages {
+        stage('Build Stage') {
+            steps {
+                echo 'We are building now..'
+                sh 'mvn clean install'
+            }
+        }
 
-stages {
-	stage('build stage ') {
-		echo 'we are building now ..' 
-		sh 'mvn clean install'
-
-}
-
-	stage('Tesing stage')
-{
-	echo 'testing ... '
-	sh 'mvn test' 
-}
-} 
-
+        stage('Testing Stage') {
+            steps {
+                echo 'Testing...'
+                sh 'mvn test' 
+            }
+        }
+    }
 }
